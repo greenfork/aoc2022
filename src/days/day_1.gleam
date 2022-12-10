@@ -1,7 +1,8 @@
 import gleam/list
 import gleam/string
 import gleam/int
-import gleam/io
+
+// import gleam/io
 
 pub fn pt_1(input: String) -> Int {
   input

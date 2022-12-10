@@ -3,7 +3,7 @@ import gleam/iterator
 import gleam/int
 import gleam/io
 import gleam/list
-import gleam/erlang/process
+// import gleam/erlang/process
 import gleam/set.{Set}
 
 // Standard coordinates.
@@ -131,7 +131,7 @@ fn are_adjacent(pos: Pos, another: Pos) -> Bool {
   |> set.contains(another)
 }
 
-fn draw_grid(grid: Grid) -> Grid {
+pub fn draw_grid(grid: Grid) -> Grid {
   io.println("Grid:")
   let it = {
     use y <- iterator.map(iterator.range(0, 25))
@@ -171,6 +171,6 @@ fn do_find_index(xs, elem, index) -> Result(Int, Nil) {
   case xs {
     [] -> Error(Nil)
     [x, ..] if x == elem -> Ok(index)
-    [x, ..rest] -> do_find_index(rest, elem, index + 1)
+    [_, ..rest] -> do_find_index(rest, elem, index + 1)
   }
 }

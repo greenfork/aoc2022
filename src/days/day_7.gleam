@@ -2,7 +2,7 @@ import gleam/string
 import gleam/iterator
 import gleam/int
 import gleam/list
-import gleam/io
+// import gleam/io
 import gleam/set.{Set}
 
 const total_space = 70000000
